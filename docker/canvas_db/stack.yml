@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: canvas_password
+      POSTGRES_USER: canvas_user
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 4999:4999
+
+# docker stack deploy -c stack.yml postgres
